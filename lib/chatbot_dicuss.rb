@@ -29,6 +29,7 @@ def converse_with_ai(user_prompt, conversation_history)
     "max_tokens" => 100,
     "temperature" => 0.0
   }
+
   response = HTTP.post($url, headers: $headers, body: data.to_json)
   response_body = JSON.parse(response.body.to_s)
   response_string = response_body['choices'][0]['text'].strip
